@@ -158,7 +158,6 @@ export default function UploadPage() {
                 id="tanzaku-image"
                 type="file"
                 accept="image/*"
-                capture="environment"
                 onChange={handleFileChange}
                 disabled={isSubmitting}
                 className="absolute inset-0 h-full w-full cursor-pointer opacity-0"
