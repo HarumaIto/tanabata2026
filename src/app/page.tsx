@@ -54,7 +54,8 @@ export default function Home() {
       {/* 短冊を追加するボタン（左下） */}
       <Link
         href="/upload"
-        className="group absolute bottom-6 left-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-[#f4c95d] to-[#e8a13a] shadow-[0_0_24px_rgba(244,201,93,0.4)] transition-all duration-300 hover:scale-110 hover:shadow-[0_0_32px_rgba(244,201,93,0.6)] active:scale-95 sm:bottom-10 sm:left-10 sm:h-16 sm:w-16"
+        className="group absolute left-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-[#f4c95d] to-[#e8a13a] shadow-[0_0_24px_rgba(244,201,93,0.4)] transition-all duration-300 hover:scale-110 hover:shadow-[0_0_32px_rgba(244,201,93,0.6)] active:scale-95 sm:left-10 sm:h-16 sm:w-16"
+        style={{ bottom: "calc(1.5rem + env(safe-area-inset-bottom, 16px))" }}
         aria-label="短冊を追加する"
       >
         <svg
