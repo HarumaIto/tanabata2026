@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useRef, useState } from "react";
+import Link from "next/link";
 import type { TanzakuCreateResponse } from "@/lib/types";
 
 type SubmitState = "idle" | "submitting" | "success" | "error";
@@ -81,6 +82,27 @@ export default function UploadPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0a0e2a] via-[#101a3d] to-[#0a0e2a] relative overflow-hidden">
+      {/* 戻るボタン（左上） */}
+      <Link
+        href="/"
+        className="group absolute top-5 left-5 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/10 backdrop-blur-md transition-all duration-300 hover:bg-white/20 hover:border-white/30 active:scale-90 sm:top-8 sm:left-8 sm:h-11 sm:w-11"
+        aria-label="トップに戻る"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={2}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="h-5 w-5 text-white/80 transition-transform duration-300 group-hover:-translate-x-0.5 sm:h-5 sm:w-5"
+        >
+          <line x1="19" y1="12" x2="5" y2="12" />
+          <polyline points="12 19 5 12 12 5" />
+        </svg>
+      </Link>
+
       {/* 星のきらめき背景 */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 opacity-70 [background-image:radial-gradient(1.5px_1.5px_at_20px_30px,white,transparent),radial-gradient(1.5px_1.5px_at_90px_120px,white,transparent),radial-gradient(1px_1px_at_140px_60px,white,transparent),radial-gradient(1px_1px_at_180px_180px,white,transparent),radial-gradient(2px_2px_at_60px_200px,white,transparent),radial-gradient(1px_1px_at_220px_40px,white,transparent),radial-gradient(1.5px_1.5px_at_260px_140px,white,transparent),radial-gradient(1px_1px_at_10px_160px,white,transparent)] [background-size:300px_300px] animate-pulse" />
