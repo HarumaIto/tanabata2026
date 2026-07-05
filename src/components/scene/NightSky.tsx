@@ -25,8 +25,8 @@ function SkyDome() {
     const pos = geo.attributes.position;
     const colors = new Float32Array(pos.count * 3);
 
-    const zenith = new THREE.Color("#050818"); // 天頂: 濃紺
-    const horizon = new THREE.Color("#241a45"); // 水平線: 藍〜紫がかった色
+    const zenith = new THREE.Color("#0c1230"); // 天頂: 明るめの紺
+    const horizon = new THREE.Color("#3a2a6a"); // 水平線: 明るい藍紫
 
     for (let i = 0; i < pos.count; i++) {
       const y = pos.getY(i) / domeRadius; // -1 (下) 〜 1 (上)
@@ -57,8 +57,8 @@ function MilkyWay() {
     const colors = new Float32Array(count * 3);
     const sizes = new Float32Array(count);
 
-    const bandColorA = new THREE.Color("#e2eeff"); // より明るく白い青 (変更前: #cfe0ff)
-    const bandColorB = new THREE.Color("#a3b8ff"); // より明るいラベンダーブルー (変更前: #8fa0e8)
+    const bandColorA = new THREE.Color("#f0f4ff"); // 白に近い明るい青
+    const bandColorB = new THREE.Color("#bfccff"); // 明るいラベンダーブルー
 
     // 装飾用のパーティクル配置は固定シードの疑似乱数で生成する
     // (Math.random だと再レンダーの度に結果が変わってしまうため)。
@@ -125,10 +125,10 @@ function MilkyWay() {
     <group ref={groupRef}>
       <points geometry={particles}>
         <pointsMaterial
-          size={0.65} // パーティクルのサイズを大きくする (変更前: 0.5)
+          size={0.75}
           vertexColors
           transparent
-          opacity={0.8} // 透明度を上げてより明るくする (変更前: 0.55)
+          opacity={0.9}
           sizeAttenuation
           depthWrite={false}
           blending={THREE.AdditiveBlending}
@@ -164,7 +164,7 @@ export function NightSky() {
   return (
     <>
       <SkyDome />
-      <fog attach="fog" args={["#0a0e2a", 18, 70]} />
+      <fog attach="fog" args={["#101840", 30, 90]} />
       <Stars
         radius={70}
         depth={50}

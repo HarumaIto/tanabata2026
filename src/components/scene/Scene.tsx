@@ -145,12 +145,12 @@ function DebugProbe({ selectedId }: { selectedId: string | null }) {
 function SceneLighting() {
   return (
     <>
-      {/* やや暗め・青みがかった夜の環境光 */}
-      <ambientLight color="#3a4a7a" intensity={0.45} />
-      <hemisphereLight color="#3d5a99" groundColor="#0a0e1f" intensity={0.35} />
+      {/* 夜空の環境光（明るめ） */}
+      <ambientLight color="#5a6aaa" intensity={0.7} />
+      <hemisphereLight color="#5a7abb" groundColor="#1a2040" intensity={0.55} />
       {/* 行灯のような温かみのあるポイントライト */}
-      <pointLight position={[3, 5, 4]} color="#ffcf9e" intensity={12} distance={20} decay={2} />
-      <pointLight position={[-4, 3, -3]} color="#ff9d6c" intensity={8} distance={18} decay={2} />
+      <pointLight position={[3, 5, 4]} color="#ffcf9e" intensity={18} distance={25} decay={2} />
+      <pointLight position={[-4, 3, -3]} color="#ff9d6c" intensity={12} distance={22} decay={2} />
     </>
   );
 }
