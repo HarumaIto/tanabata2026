@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# tanzaku uploads & persisted data (local file storage, not for VCS)
+/public/uploads/
+/data/
+
+# editor metadata
+.claude/
+
